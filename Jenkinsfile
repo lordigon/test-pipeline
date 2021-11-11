@@ -16,7 +16,7 @@ pipeline {
     stage('Build Docker Image') {
       steps {
         container('docker') { 
-          sh "docker login --username=lordigon --password=mq7oDrpONrKX7P 
+          sh "docker login --username=lordigon --password=mq7oDrpONrKX7P" 
           sh "docker build -t lordigon/promo-app:dev ."  // when we run docker in this step, we're running it via a shell on the docker build-pod container, 
           sh "docker push lordigon/promo-app:dev"        // which is just connecting to the host docker deaemon
         }
